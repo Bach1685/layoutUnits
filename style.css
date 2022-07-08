@@ -197,10 +197,16 @@ h6 {
   line-height: 1.5;
 }
 .example__items {
-  display: flex;
+  /* display: flex; 
   flex-wrap: wrap;
   row-gap: 24px;
-  margin: 0 -12px;
+  margin: 0 -12px; */
+  display: grid;
+  /* переводим в rem 
+  делим нужный размер (290px)
+  на 16 (размер шрифта по умолчанию)*/
+  grid-template-columns: repeat(auto-fit, minmax(18.125rem, 1fr));
+  gap: 24px;
 }
 .example__item {
   padding: 0 12px;
