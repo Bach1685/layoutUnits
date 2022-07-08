@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+/* -------- */
+.item-example__icon img {
+  width: 30px;
+  height: 30px;
+  background: aliceblue;
+}
+
+.body {
+  line-height: 1;
+  background: #333;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: whitesmoke;
+}
+
+.wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+.example {
+  padding: 0 105px;
+}
+.example__container {
+  padding: 0 15px;
+  margin: 0 auto;
+  /*переводим в rem */
+  /*делим ширину по макету (1020px + 15px + 15px)*/
+  /*на 16px (размер шрифта по умолчанию) */
+  max-width: 65.625rem;
+  position: relative;
+}
+
+.example__container::before {
+  content: "";
+  background: url(./img/mainblock/cover.jpg) 0 0 / 400px 300px no-repeat;
+  z-index: -1;
+  position: absolute;
+  right: 0px;
+  /* ширину картинки мы поделим на ширину 
+  example__container(родителя с position: relative) 
+  умножим на 100:
+  153 / 1050 * 100 = 14.57;*/
+  width: 14.57%;
+
+  /* Высоту картинки по макету делим 
+  на ширину example__container (родителя с position: relative) 
+  умножаем на 100
+  241 / 1050 * 100 = 22.95*/
+  padding: 22.95%;
+  /* половина высоты example__container (родителя с position: relative) */
+  top: 50%;
+  /* сдвиг вправо и вверх на половину 
+  ширину/высоты картинки (меняется) */
+  transform: translate(50%, -50%);
+}
+.example__header {
+  margin: 0 0 25px 0;
+  /* переводим в rem 
+  делим ширину макета (750px)
+  на 16 (размер шрифта по умолчанию)*/
+  max-width: 46.857rem;
+}
+.example__sub-title {
+  color: blueviolet;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* переводим в rem 
+  делим ширину макета (14px)
+  на 16 (размер шрифта по умолчанию)*/
+  font-size: 0.875rem;
+
+  /* переводим в проценты или части
+  делим размер по макету (24px) 
+  на размер шрифта (14px)*/
+  line-height: 1.7;
+
+  /* переводим в em
+  делим размер по макету (15px)
+   на размер шрифта (14px) */
+  margin: 0 0 1.07em 0;
+}
+.example__title {
+  color: aquamarine;
+  text-transform: uppercase;
+  font-weight: 900;
+
+  /* переводим в em
+  делим размер по макету (42px)
+   на 16 размер шрифта по умолчанию */
+  font-size: 2.625rem;
+
+  /* переводим в проценты или части
+  делим размер по макету (50px) 
+  на размер шрифта (42px)*/
+  line-height: 1.7;
+
+  /* переводим в em
+  делим размер по макету (16px)
+   на размер шрифта (42px) */
+  margin: 0 0 0.38em 0;
+
+  /* переводим в em
+  делим размер по макету (5px)
+   на размер шрифта (42px) */
+  letter-spacing: 0.12em;
+}
+.example__text {
+  /* переводим в проценты или части
+  делим размер по макету (24px) 
+  на размер шрифта (16px)*/
+  line-height: 1.5;
+}
+.example__items {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 24px;
+  margin: 0 -12px;
+}
+.example__item {
+  padding: 0 12px;
+  /* получаем размер в %
+  делим общую ширину 100% на 3 */
+  flex: 1 1 33.333%;
+
+  /* переводим в rem 
+  делим ширину макета (290px)
+  на 16 (размер шрифта по умолчанию)*/
+  min-width: 18.125rem;
+}
+.item-example {
+  display: flex;
+  column-gap: 23px;
+}
+
+.item-example__icon {
+  flex: 0 0 63px;
+}
+.item-example__body {
+}
+.item-example__title {
+  color: red;
+  font-weight: 900;
+  /* переводим в rem 
+  делим ширину макета (24px)
+  на 16 (размер шрифта по умолчанию)*/
+  font-size: 1.5rem;
+
+  /* переводим в em
+  делим размер по макету (11px)
+   на размер шрифта (24px) */
+  margin: 0 0 0.45em 0;
+}
+.item-example__text {
+  /* переводим в проценты или части
+  делим размер по макету (24px) 
+  на размер шрифта (16px)*/
+  line-height: 1.5;
+}
