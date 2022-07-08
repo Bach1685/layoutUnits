@@ -116,29 +116,35 @@ h6 {
   position: relative;
 }
 
-.example__container::before {
-  content: "";
-  background: url(./img/mainblock/cover.jpg) 0 0 / 400px 300px no-repeat;
-  z-index: -1;
-  position: absolute;
-  right: 0px;
-  /* ширину картинки мы поделим на ширину 
+/* переводим в em
+  нужный размер (768px)делим
+   на размер шрифта по умолчанию (16px) */
+@media (min-width: 48em) {
+  .example__container::before {
+    content: "";
+    background: url(./img/mainblock/cover.jpg) 0 0 / 400px 300px no-repeat;
+    z-index: -1;
+    position: absolute;
+    right: 0px;
+    /* ширину картинки мы поделим на ширину 
   example__container(родителя с position: relative) 
   умножим на 100:
   153 / 1050 * 100 = 14.57;*/
-  width: 14.57%;
+    width: 14.57%;
 
-  /* Высоту картинки по макету делим 
+    /* Высоту картинки по макету делим 
   на ширину example__container (родителя с position: relative) 
   умножаем на 100
   241 / 1050 * 100 = 22.95*/
-  padding: 22.95%;
-  /* половина высоты example__container (родителя с position: relative) */
-  top: 50%;
-  /* сдвиг вправо и вверх на половину 
+    padding: 22.95%;
+    /* половина высоты example__container (родителя с position: relative) */
+    top: 50%;
+    /* сдвиг вправо и вверх на половину 
   ширину/высоты картинки (меняется) */
-  transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+  }
 }
+
 .example__header {
   margin: 0 0 25px 0;
   /* переводим в rem 
